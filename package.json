@@ -1,0 +1,25 @@
+{
+  "name": "socketiolecture",
+  "version": "1.0.0",
+  "description": "Socket.IO \r is a library that enables real-time, bidirectional and event-based communication between the browser and the server.\r It consists of: a Node. js server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepak685/SocketIoLecture.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deepak685/SocketIoLecture/issues"
+  },
+  "homepage": "https://github.com/deepak685/SocketIoLecture#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "socket.io": "^4.5.1"
+  }
+}

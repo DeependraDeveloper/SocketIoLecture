@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    // adding title of the page as "socket page"
+    <title>Socket page</title>
+
+    //adding src and connecting to socket.io
+    <script src="https://cdn.socket.io/socket.io-3.0.1.min.js"></script>
+  </head>
+  <body>
+    //input val of type "text" with class name as "message"
+    <input type="text" class="message" />
+
+    //making a button on page as Send and enabled a event "onclick" triggers
+    sendMsg() function
+    <button onclick="sendMsg()">Send</button>
+
+    //intially and empty header h1 tag
+    <h1></h1>
+
+    //adding our index.js src here
+    <script>
+      //defining the socket server
+      const socket = io("http://localhost:3000");
+
+      //enabling socket to listen for event "on" connection
+      socket.on("connection");
+
+      //enabling socket to listen for event "on" message and do dom manipulation
+      // by getting the data inside the input feild by queryselector (h1 tag) and inner html as data
+
+      socket.on("message", (data) => {
+        document.querySelector("h1").innerHTML = data;
+      });
+
+      //sendMsg triggering function defination
+      const sendMsg = () => {
+        //taking the data form input field on class message so .dot is used
+        const inputMsg = document.querySelector(".message");
+        //grabbing the value from above event
+        const msg = inputMsg.value;
+
+        //finally emitting the message
+        socket.emit("message", msg);
+      };
+    </script>
+  </body>
+</html>
